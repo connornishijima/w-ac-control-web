@@ -5,20 +5,16 @@ $directory = "/home/pi/wac2/";
 if(!empty($_GET["relay"])){
 	$relay = $_GET["relay"];
 
-	if($relay == "D1"){
-		echo "Switched " . $relay . " ";
-	}
-
 	if(!empty($_GET["power"])){
 		$power = $_GET["power"];
 
-		if($power == "ON"){
+		if($power == "1"){
 	        	echo "on!";
-			file_put_contents($directory . "command",$relay . ":" . $power);
+			file_put_contents($directory . "command",$relay . ":1");
 		}
-		else{
+		if($power == "0"){
 			echo "off!";
-			file_put_contents($directory . "command",$relay . ":" . $power);
+			file_put_contents($directory . "command",$relay . ":0");
 		}
 	}
 	else{
