@@ -12,7 +12,7 @@ if(!empty($_GET["relay"])){
 	        	echo "on!";
 			file_put_contents($directory . "command",$relay . ":1");
 		}
-		if($power == "0"){
+		if($power == "2"){
 			echo "off!";
 			file_put_contents($directory . "command",$relay . ":0");
 		}

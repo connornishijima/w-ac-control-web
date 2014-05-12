@@ -25,19 +25,19 @@ file_put_contents($directory . "command","PAGELOAD");
 					httpGet("control.php?relay=A" + channel + "&power=" + power);
 				}
 				if (dropd.value == "B") {
-                                        httpGet("control.php?relay=B" + channel + "&power=" + power)
+                                        httpGet("control.php?relay=B" + channel + "&power=" + power);
                                 }
                                 if (dropd.value == "C") {
-                                        httpGet("control.php?relay=C" + channel + "&power=" + power)
+                                        httpGet("control.php?relay=C" + channel + "&power=" + power);
                                 }
                                 if (dropd.value == "D") {
-                                        httpGet("control.php?relay=D" + channel + "&power=" + power)
+                                        httpGet("control.php?relay=D" + channel + "&power=" + power);
                                 }
                                 if (dropd.value == "E") {
-					httpGet("control.php?relay=E" + channel + "&power=" + power)
+					httpGet("control.php?relay=E" + channel + "&power=" + power);
                                 }
                                 if (dropd.value == "F") {
-					httpGet("control.php?relay=F" + channel + "&power=" + power)
+					httpGet("control.php?relay=F" + channel + "&power=" + power);
                                 }
 			}
 
@@ -59,8 +59,10 @@ file_put_contents($directory . "command","PAGELOAD");
 		<button onclick="ch(2,1)">CH2 ON</button>
 		<button onclick="ch(3,1)">CH3 ON</button>
 		<br>
-		<button onclick="ch(1,0)">CH1 OFF</button>
-		<button onclick="ch(2,0)">CH2 OFF</button>
-		<button onclick="ch(3,0)">CH3 OFF</button>
+		<button onclick="ch(1,2)">CH1 OFF</button>
+		<button onclick="ch(2,2)">CH2 OFF</button>
+		<button onclick="ch(3,2)">CH3 OFF</button>
+
+		<div id="empty"></div>
 	</body>
 </html>
