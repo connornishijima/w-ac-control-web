@@ -2,7 +2,7 @@
 
 $directory = "/home/pi/wac2/";
 
-file_put_contents($directory . "command","PAGELOAD");
+file_put_contents($directory . "command","M:PAGELOAD");
 
 ?>
 
@@ -40,6 +40,19 @@ file_put_contents($directory . "command","PAGELOAD");
 					httpGet("control.php?relay=F" + channel + "&power=" + power);
                                 }
 			}
+			function toggleContent() {
+				// Get the DOM reference
+				var JamId = document.getElementById("jam");
+				// Toggle
+				if(JamId.innerHTML == "JAM"){
+					JamId.innerHTML = "NO JAM";
+					httpGet("control.php?jam=2");
+				}
+				else{
+					JamId.innerHTML = "JAM";
+					httpGet("control.php?jam=1");
+				}
+			}
 
 		</script>
 	</head>
@@ -62,6 +75,8 @@ file_put_contents($directory . "command","PAGELOAD");
 		<button onclick="ch(1,2)">CH1 OFF</button>
 		<button onclick="ch(2,2)">CH2 OFF</button>
 		<button onclick="ch(3,2)">CH3 OFF</button>
+
+		<button id="jam" onclick="toggleContent()">JAM</button>
 
 		<div id="empty"></div>
 	</body>

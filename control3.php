@@ -10,11 +10,11 @@ if(!empty($_GET["relay"])){
 
 		if($power == "1"){
 	        	echo "on!";
-			file_put_contents($directory . "command","R:" . $relay . ":1");
+			file_put_contents($directory . "command",$relay . ":1");
 		}
 		if($power == "2"){
 			echo "off!";
-			file_put_contents($directory . "command","R:" . $relay . ":0");
+			file_put_contents($directory . "command",$relay . ":0");
 		}
 	}
 	else{
@@ -22,8 +22,4 @@ if(!empty($_GET["relay"])){
 	}
 }
 
-if(!empty($_GET["jam"])){
-	$jam = $_GET["jam"];
-	file_put_contents($directory . "command","J:" . $jam);
-}
-?>
+?>zsegfgf

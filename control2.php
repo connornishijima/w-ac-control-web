@@ -1,9 +1,14 @@
+spjpfejswpfj
+
 <?php
+
+echo "I HATE YOU";
 
 $directory = "/home/pi/wac2/";
 
 if(!empty($_GET["relay"])){
 	$relay = $_GET["relay"];
+	echo $relay;
 
 	if(!empty($_GET["power"])){
 		$power = $_GET["power"];
@@ -18,12 +23,20 @@ if(!empty($_GET["relay"])){
 		}
 	}
 	else{
-		die("ERROR - NO POWER ARGUMENT!");
+		//die("ERROR - NO POWER ARGUMENT!");
 	}
 }
 
 if(!empty($_GET["jam"])){
 	$jam = $_GET["jam"];
-	file_put_contents($directory . "command","J:" . $jam);
-}
+	echo $jam;
+	if($jam == "1"){
+		file_put_contents($directory . "command","J:1");
+	}
+	if($jam == "0"){
+                file_put_contents($directory . "command","J:0");
+        }
+
+
 ?>
+rohorehgf
