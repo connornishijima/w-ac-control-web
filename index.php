@@ -44,13 +44,15 @@ file_put_contents($directory . "command","M:PAGELOAD");
 				// Get the DOM reference
 				var JamId = document.getElementById("jam");
 				// Toggle
-				if(JamId.innerHTML == "JAM"){
-					JamId.innerHTML = "NO JAM";
-					httpGet("control.php?jam=2");
+				if(JamId.value == "0"){
+					JamId.innerHTML = "<img src='images/jam_on.jpg'>";
+					JamId.value = "1";
+					httpGet("control.php?jam=1");
 				}
 				else{
-					JamId.innerHTML = "JAM";
-					httpGet("control.php?jam=1");
+					JamId.innerHTML = "<img src='images/jam_off.jpg'>";
+					JamId.value = "0";
+					httpGet("control.php?jam=2");
 				}
 			}
 
@@ -74,9 +76,9 @@ file_put_contents($directory . "command","M:PAGELOAD");
 		<br>
 		<button onclick="ch(1,2)">CH1 OFF</button>
 		<button onclick="ch(2,2)">CH2 OFF</button>
-		<button onclick="ch(3,2)">CH3 OFF</button>
-
-		<button id="jam" onclick="toggleContent()">JAM</button>
+		<button onclick="ch(3,2)">CH3 OFF</button><br>
+		<br>
+		<div id="jam" value="1" onclick="toggleContent()"><img src='images/jam_on.jpg'></button><div>
 
 		<div id="empty"></div>
 	</body>

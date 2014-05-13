@@ -1,6 +1,7 @@
 <?php
 
 $directory = "/home/pi/wac2/";
+$jamConf = $directory . "conf/freqJam.conf";
 
 if(!empty($_GET["relay"])){
 	$relay = $_GET["relay"];
@@ -25,5 +26,6 @@ if(!empty($_GET["relay"])){
 if(!empty($_GET["jam"])){
 	$jam = $_GET["jam"];
 	file_put_contents($directory . "command","J:" . $jam);
+	file_put_contents($jamConf,$jam);
 }
 ?>
